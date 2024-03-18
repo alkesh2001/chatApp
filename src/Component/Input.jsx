@@ -10,7 +10,7 @@ const Input = forwardRef( function Input({
 {
     return (
     <div className='w-full'>
-       <input type="text" {...props}  className={`w-full border border-black text-lg font-medium px-3 py-1 outline-none ${className}`} ref={ref}/>
+       <input type={type} {...props}  className={`w-full border border-black text-lg font-medium px-3 py-1 outline-none ${className}`} ref={ref}/>
     </div>
   )
 }

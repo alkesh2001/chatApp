@@ -1,6 +1,9 @@
-import Login from './Login';
+import SignUp from './SignUp';
 import Input from './Input';
+import Login from './Login'
+
 export  {
-  Login,
-  Input
+  SignUp,
+  Input,
+  Login
 }

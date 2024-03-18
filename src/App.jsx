@@ -1,10 +1,10 @@
-import { Login } from "./Component/index"
+import { Outlet } from "react-router-dom"
 
 function App() {
 
   return (
        <div className=''>
-         <Login/>
+         <Outlet/>
        </div>
   
   )
