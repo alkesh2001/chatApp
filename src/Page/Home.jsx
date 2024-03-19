@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 function Home() {
   
@@ -9,7 +10,7 @@ function Home() {
 
   const  user = async () =>{
      try {
-        const response = await axios.get('http://localhost:8080/api/v1/chat-app/chats/users',{
+        const response = await axios.get('http://localhost:8080/api/v1/chat-app/chats',{
             headers:{
                 'accept': 'application/json',
                 Authorization : `Bearer ${Token}`
@@ -44,7 +45,9 @@ function Home() {
             <div className='absolute bottom-20 right-5'>
                 <div className=' flex justify-center items-center h-16 w-16 bg-green-600  rounded-full'>
                     <div> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        <Link to={'/AvalaibleUser'}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        </Link>
                     </div>
                 </div>
             </div>

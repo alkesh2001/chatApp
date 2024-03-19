@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "./index";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import axios from 'axios'
@@ -21,6 +21,7 @@ function SignUp() {
             'content-type' : 'application/json'
           }
         });
+        localStorage.setItem('response' , JSON.stringify(response))
         dispatch(userAccessToken(response.data.data.accessToken))
         if(response.status === 200){
           const getCurrentUser = await axios.get('http://localhost:8080/api/v1/users/current-user',{
